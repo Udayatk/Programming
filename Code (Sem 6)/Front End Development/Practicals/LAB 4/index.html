@@ -1,0 +1,50 @@
+<!--A company has recently launched a new website and wants togather information from visitors usiing a sign up form. 
+    They want to make sure the form is user friendly, collects the neccessary information, and is visually appealing. 
+    They also want to ensure the form is accessible on different devices and screens. To achieve these goals, the company
+     has decided to use Web form 2.0 controls. The form includes inputs from the user's name, date of birth, age ,email, 
+     and website. The form is designed to be easy -->
+<!<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="form">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+        <br />
+        <br />
+        <label for="date of birth">Date of Birth:</label>
+        <input type="date" id="dob" required />
+        <br />
+        <br />
+        <label for="age">Age</label>
+        <input type="range" id="age" required />
+        <br />
+        <br />
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <br />
+        <br />
+        <label for="website">Website</label>
+        <input type="url" id="website" required />
+        <br />
+        <br />
+        <label for="gender">Gender</label>
+        <input type="radio" id="male" required />Male
+        <input type="radio" id="female" required />Female
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <script src="script.js" async defer>
+    </script>
+  </body>
+</html>

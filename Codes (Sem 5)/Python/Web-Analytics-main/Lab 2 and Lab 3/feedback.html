@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="feedback.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Presidency University</title>
+    <style>
+      body {
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="top">
+      <h1 id="home">
+        <a href="../Lab 2 and Lab 3/index.html">Presidency University</a>
+      </h1>
+      <nav>
+        <a href="../Lab 2 and Lab 3/index.html">Home</a>
+        <a href="#m1">Admissions</a>
+        <a href="#c1">Faculties</a>
+      </nav>
+    </header>
+    <!--<section class="form">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+        <br />
+        <br />
+        <label for="date of birth">DOB</label>
+        <input type="date" id="dob" required />
+        <br />
+        <br />
+        <label for="age">Age</label>
+        <input type="range" id="age" required />
+        <br />
+        <br />
+        <label for="email">Email</label>
+        <input type="text" id="email" required />
+        <br />
+        <br />
+        <label for="website">Website</label>
+        <input type="url" id="website" required />
+        <br />
+        <br />
+        <div id="gender">
+          <label for="gender">Gender</label>
+          <input type="radio" id="male" name="gender" value="Male" />
+          <label for="gender" id="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female" />
+          <label for="gender" id="female">Female</label>
+          <br />
+          <br />
+          <input type="submit" id="search" value="Search" class="search" />
+        </div>
+      </form>
+    </section>-->
+    <h2 class="gap">USER LOGIN VALIDATION</h2>
+    <section class="form">
+      <br /><br />
+      <form name="form1" onSubmit="return formValidator()">
+        <center>
+          <table border="0" colsSpacing="4">
+            <tr>
+              <td>Username:</td>
+              <td><input type="text" value="" name="uname" /></td>
+            </tr>
+
+            <tr>
+              <td>Password:</td>
+              <td><input type="password" value="" name="pwd" /></td>
+            </tr>
+            <tr>
+              <td><input type="submit" value="SUBMIT" name="btn1" /></td>
+              <td><input type="reset" value="CANCEL" name="btn2" /></td>
+            </tr>
+          </table>
+        </center>
+      </form>
+    </section>
+
+    <script src="" async defer>
+      function formValidator() {
+        var username = document.getElementById("uname");
+        var password = document.getElementById("pwd");
+        if (isEmpty(username) && isEmpty(password)) {
+          alert("enter something");
+          document.form1.uname.focus();
+        }
+        if (!isEmpty(username) && isEmpty(password) && isAlphabet(username)) {
+          alert("Please enter password");
+          document.form1.pwd.focus();
+        }
+        if (!isEmpty(username) && !isEmpty(password) && isAlphabet(username)) {
+          return true;
+        } else {
+          if (
+            !isEmpty(username) &&
+            !isEmpty(password) &&
+            !isAlphabet(username)
+          ) {
+            alert("Please Enter only alphabets for username");
+            document.form1.uname.focus();
+          }
+        }
+        return false;
+      }
+
+      function isEmpty(elem) {
+        if (elem.value.length == 0) {
+          return true;
+        }
+        return false;
+      }
+      function isAlphabet(elem) {
+        var alphaExp = /^[a-z A-Z]+$/;
+        if (elem.value.match(alphaExp)) {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

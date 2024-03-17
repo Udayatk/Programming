@@ -1,0 +1,27 @@
+h3{
+    text-align: left;
+}
+ul{
+    text-align: left;
+}
+table{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+th ,td{
+    border: 1px solid black;
+    padding: 5px;
+}
+details{
+    text-align: left;
+}
+div.details{
+    text-align: left;
+}
+img{
+    width: 20%;
+    height: auto;
+    display: block;
+    float: right;
+}

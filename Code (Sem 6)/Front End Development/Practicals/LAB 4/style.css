@@ -1,0 +1,130 @@
+/* General styles */
+body {
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  background-color: #ffd703;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header styles */
+header {
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 3%;
+}
+nav a {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#m1 {
+  text-align: center;
+}
+/* Menu section styles */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+}
+.menu-item {
+  flex-basis: 30%;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 10px #999;
+  padding: 20px;
+  text-align: center;
+}
+.menu-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.menu-item h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.menu-item p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Footer styles */
+footer {
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/*Header Tags*/
+#top {
+  position: fixed;
+  background-color: #ffd703;
+  width: 100%;
+  z-index: 1;
+  transition: 0.2s;
+  font-size: 20px;
+  padding: 1%;
+  margin: 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+a {
+  color: #000000;
+}
+
+a:link {
+  color: #000000;
+  background-color: transparent;
+  text-decoration: none;
+  background: linear-gradient(to left, #ffd703 50%, #000000 50%) right;
+  background-size: 300%;
+  transition: 0.2s ease-out;
+}
+a:hover {
+  color: #ffd703;
+  background-color: transparent;
+  background-position: left;
+  padding: 10px;
+}
+
+/*About Us Tag*/
+.img {
+  background-image: url("../Lab 2 and Lab 3/Assets/presidency university.jfif");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 60%;
+  float: right;
+  overflow: auto;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin-top: 160px;
+  padding-bottom: 0px;
+  object-fit: contain;
+  object-position: -20% 0%;
+}
+.img::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.text {
+  width: 640px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+}
+#text {
+  padding-left: 250px;
+  padding-right: 250px;
+}

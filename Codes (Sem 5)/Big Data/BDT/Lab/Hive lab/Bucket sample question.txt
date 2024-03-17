@@ -1,0 +1,11 @@
+1. create database stud;
+
+2. use stud;
+
+3. create table student(name string, deptname string, marks int) row format delimited fields terminated by ','; 
+
+4. load data local inpath '/home/training/Desktop/student' into table student;
+
+5. create table buck_table1(name string, deptname string, marks int) clustered by (marks) into 4 buckets row format delimited fields terminated by ',';
+
+6. insert overwrite table buck_table1 select * from student;

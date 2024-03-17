@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Presidency University</title>
+    <style>
+      body {
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="top">
+      <h1 id="home"><a href="index.html">Presidency University</a></h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#m1">Admissions</a>
+        <a href="#c1">Faculties</a>
+      </nav>
+    </header>
+    <main>
+      <div class="img">
+        <h2><br /><br /><br /><br /><br />About Us</h2>
+        <p id="text">
+          <br />
+          Established in 2013, Presidency University offers a vibrant learning
+          experience within its sprawling 70-acre campus. Recognized by UGC and
+          accredited with an "A+" grade by NAAC, we empower students across
+          eight diverse schools: Engineering, Management, Design, Information
+          Science, Media Studies, Commerce, Economics, and Law. Explore 70+
+          programs at undergraduate, postgraduate, and doctoral levels, designed
+          to prepare you for success in today's dynamic world. Our focus on
+          experiential learning, international collaborations, and
+          industry-aligned curriculum will equip you with the knowledge, skills,
+          and confidence to thrive.
+        </p>
+      </div>
+
+      <h2 id="m1"></h2>
+      <section>
+        <div class="menu-item">
+          <video
+            src="../Lab 2 and Lab 3/Assets/outvid.webm"
+            controls
+            height="600"
+            width="auto"
+          ></video>
+          <h3>Events</h3>
+          <p>
+            A burst of color takes over Presidency University, Bangalore, on
+            Ethnic Day. Students don their traditional attire, showcasing
+            India's diverse cultural tapestry. From vibrant sarees to regional
+            headwear, the campus transforms into a visual feast. The day comes
+            alive with traditional dance performances, delectable food stalls,
+            and displays of art and craft, each representing different
+            ethnicities. This celebration fosters understanding and appreciation
+            for the university's rich cultural mosaic.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img src="../Lab 2 and Lab 3/Assets/class.jpg" alt="Classroom img" />
+          <h3>Education</h3>
+          <p>
+            Presidency University, Bangalore offers undergraduate and
+            postgraduate programs in engineering, management, design, and more.
+            They focus on industry-ready skills, with experienced faculty and
+            modern facilities. Beyond academics, the university emphasizes
+            holistic development through co-curricular activities.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img
+            src="../Lab 2 and Lab 3/Assets/board1.jpg"
+            alt="Board Members img"
+          />
+          <h3>Education</h3>
+          <p>
+            An Edupreneur of his own right, initiative and style; has been
+            spearheading and establishing schools in Karnataka, colleges and now
+            a State Private University in Bengaluru established by Karnataka
+            State Legislative Assembly.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img src="../Lab 2 and Lab 3/Assets/rick astley.jfif" alt="Workplace" usemap="#workmap">
+            <map name="workmap">
+              <area shape="rect" coords="200,1000,500,200" alt="RickRoll" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <area shape="circle" coords="100,300,50" alt="Another One" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            </map>
+        </div>
+      </section>
+      <section id="box">
+        <video controls height="600" width="auto">
+          <source src="../Lab 2 and Lab 3/Assets/output.webm" type=video/mp4 />
+        </video>
+        <div class="player">
+          <div class="imgBx">
+            <img src="../Lab 2 and Lab 3/Assets/phonk.jpg" alt="Phonk" />
+          </div>
+          <audio controls>
+            <source
+              src="../Lab 2 and Lab 3/Assets/RAPTURE.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+        </div>
+      </section>
+    </main>
+    <div id="bottom">
+      <section>
+        <div id="grad1">
+          <h1 id="c1"><a href="">contact us</a></h1>
+        </div>
+        <div id="rot">
+          <h1><a href="feedback.html">feedback</a></h1>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Presidency University</p>
+    </footer>
+
+    <script>
+      // When the user scrolls down 50px from the top of the document, resize the header's font size
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          document.getElementById("top").style.fontSize = "15px";
+        } else {
+          document.getElementById("top").style.fontSize = "20px";
+        }
+      }
+    </script>
+  </body>
+</html>

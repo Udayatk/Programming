@@ -1,0 +1,69 @@
+Python is a interpreted language but it is possible to compile it using the below code
+To compile and run a python code
+To run a python in cmd you have to write "python"
+Then type"import py_compiler" to import python compiler
+Lastly type "py_.compile('filename.py')" into the cmd
+
+Python is a general purpose,dynamic,high-level, and interpreted programming language. It supports OOPS approach to develop apps.
+It is simple and easy to learn and provides a lots of high-level data strutures. Python is an open source, cost free programming language.
+Python code readability and maintainability are important. 
+
+Why are we using Python?
+1.Easy to use and learn
+2.Expressive Langauge
+3.Learn Standard Library
+4.Dynamic Memory Allocaton
+5.High Demand
+6.Big Data and Machine Learning
+
+Where is Python used?
+1.Data Science
+2.Desktop Applications
+3.Mobile Applications
+4.Artificial Intelligence
+5.Machine Learning
+
+Real Time use of Python
+1.Instagram
+2.Spotify
+3.Netflix
+4.Uber
+5.Youtube
+6.Dropbox
+
+Types of Python Tokens
+1.Keywords: if, else, while ,def ,class
+2.Identifiers
+3.Literals
+4.Operators:(+,-,*,/)//(==,!=,<,>)
+5.Delimiters: (), {}, []
+6.Comments: Comments in python start with # Symbol
+7.Strings: They start with either a single quotations('') or double quotations("")
+8.Indentation: 
+9.Special Symbols
+
+Rules while writing Identifiers
+1.Identifiers should start with a letter or an underscore character
+2.Identifiers cannot start with a number
+3.Identifiers can only contain alpha-numeric characters and underscores(A-z,0-9,_)
+4.Identifiers are case sensitive
+5.Identifiers cannot be python keywords
+
+Types of Literals
+1.Numeric Literals
+2.String Literals
+3.Boolean Literals
+4.None Literals
+5.List Literals
+6.Tuple Literals
+7.Set Literals
+8.Dictionary Literals
+
+Types of Python Operators
+1.Arithmetic Operators: +, -, *, /, %, //
+2.Comparison Operators
+3.Assignment Operators
+4.Bitwise Operators
+5.Membership Operators
+6.Identity Operators
+7.Logical Operators

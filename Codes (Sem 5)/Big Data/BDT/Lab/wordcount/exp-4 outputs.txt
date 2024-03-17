@@ -1,0 +1,83 @@
+[training@localhost ~]$ hadoop dfs -mkdir /incount
+[training@localhost ~]$ hadoop dfs -put /home/training/Desktop/20211CSG0005.txt /incount
+[training@localhost ~]$ hadoop jar /home/training/Desktop/count.jar WordCount /incount/20211CSG0005.txt /outcount
+23/10/26 01:08:41 WARN mapred.JobClient: Use GenericOptionsParser for parsing the arguments. Applications should implement Tool for the same.
+23/10/26 01:08:41 WARN snappy.LoadSnappy: Snappy native library is available
+23/10/26 01:08:41 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+23/10/26 01:08:41 INFO snappy.LoadSnappy: Snappy native library loaded
+23/10/26 01:08:41 INFO mapred.FileInputFormat: Total input paths to process : 1
+23/10/26 01:08:42 INFO mapred.JobClient: Running job: job_202310260012_0001
+23/10/26 01:08:43 INFO mapred.JobClient:  map 0% reduce 0%
+23/10/26 01:08:50 INFO mapred.JobClient:  map 100% reduce 0%
+23/10/26 01:09:10 INFO mapred.JobClient:  map 100% reduce 100%
+23/10/26 01:09:10 INFO mapred.JobClient: Job complete: job_202310260012_0001
+23/10/26 01:09:10 INFO mapred.JobClient: Counters: 23
+23/10/26 01:09:10 INFO mapred.JobClient:   Job Counters 
+23/10/26 01:09:10 INFO mapred.JobClient:     Launched reduce tasks=1
+23/10/26 01:09:10 INFO mapred.JobClient:     SLOTS_MILLIS_MAPS=9707
+23/10/26 01:09:10 INFO mapred.JobClient:     Total time spent by all reduces waiting after reserving slots (ms)=0
+23/10/26 01:09:10 INFO mapred.JobClient:     Total time spent by all maps waiting after reserving slots (ms)=0
+23/10/26 01:09:10 INFO mapred.JobClient:     Launched map tasks=2
+23/10/26 01:09:10 INFO mapred.JobClient:     Data-local map tasks=2
+23/10/26 01:09:10 INFO mapred.JobClient:     SLOTS_MILLIS_REDUCES=19828
+23/10/26 01:09:10 INFO mapred.JobClient:   FileSystemCounters
+23/10/26 01:09:10 INFO mapred.JobClient:     FILE_BYTES_READ=1033
+23/10/26 01:09:10 INFO mapred.JobClient:     HDFS_BYTES_READ=911
+23/10/26 01:09:10 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=166066
+23/10/26 01:09:10 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=58
+23/10/26 01:09:10 INFO mapred.JobClient:   Map-Reduce Framework
+23/10/26 01:09:10 INFO mapred.JobClient:     Reduce input groups=7
+23/10/26 01:09:10 INFO mapred.JobClient:     Combine output records=0
+23/10/26 01:09:10 INFO mapred.JobClient:     Map input records=13
+23/10/26 01:09:10 INFO mapred.JobClient:     Reduce shuffle bytes=1039
+23/10/26 01:09:10 INFO mapred.JobClient:     Reduce output records=7
+23/10/26 01:09:10 INFO mapred.JobClient:     Spilled Records=182
+23/10/26 01:09:10 INFO mapred.JobClient:     Map output bytes=845
+23/10/26 01:09:10 INFO mapred.JobClient:     Map input bytes=481
+23/10/26 01:09:10 INFO mapred.JobClient:     Combine input records=0
+23/10/26 01:09:10 INFO mapred.JobClient:     Map output records=91
+23/10/26 01:09:10 INFO mapred.JobClient:     SPLIT_RAW_BYTES=188
+23/10/26 01:09:10 INFO mapred.JobClient:     Reduce input records=91
+[training@localhost ~]$ hadoop dfs -ls /
+Found 25 items
+drwxr-xr-x   - training supergroup          0 2023-10-16 21:54 /016
+drwxr-xr-x   - training supergroup          0 2023-10-09 21:42 /053
+drwxr-xr-x   - training supergroup          0 2023-10-09 21:45 /053output
+drwxr-xr-x   - training supergroup          0 2023-10-06 21:02 /0753
+drwxr-xr-x   - training supergroup          0 2023-10-09 20:56 /53
+drwxr-xr-x   - training supergroup          0 2023-10-09 21:10 /53output
+drwxr-xr-x   - training supergroup          0 2023-10-09 21:22 /553
+drwxr-xr-x   - training supergroup          0 2023-10-09 21:25 /553output
+drwxr-xr-x   - training supergroup          0 2023-10-09 22:04 /73
+drwxr-xr-x   - training supergroup          0 2023-10-09 22:06 /73output
+-rw-r--r--   1 training supergroup        716 2018-08-25 22:20 /Crimes_all_NS.csv
+drwxr-xr-x   - training supergroup          0 2023-10-16 21:56 /Laxmi
+drwxr-xr-x   - training supergroup          0 2023-10-05 01:19 /ae
+drwxr-xr-x   - training supergroup          0 2018-08-20 08:54 /app
+drwxr-xr-x   - training supergroup          0 2023-10-05 00:53 /be
+drwxr-xr-x   - training supergroup          0 2018-08-19 21:14 /destop
+drwxr-xr-x   - hbase    supergroup          0 2023-10-05 00:27 /hbase
+drwxr-xr-x   - training supergroup          0 2023-10-26 01:07 /incount
+drwxr-xr-x   - training supergroup          0 2019-08-24 02:25 /out1
+drwxr-xr-x   - training supergroup          0 2023-10-26 01:09 /outcount
+-rw-r--r--   1 training supergroup        138 2019-08-24 02:16 /sathish.txt
+drwxrwxrwx   - hue      supergroup          0 2019-01-01 20:27 /tmp
+drwxr-xr-x   - hue      supergroup          0 2019-01-01 20:27 /user
+drwxr-xr-x   - mapred   supergroup          0 2019-01-01 17:24 /var
+drwxr-xr-x   - training supergroup          0 2023-10-19 01:36 /wordcount
+[training@localhost ~]$ hadoop dfs -ls /oucount
+ls: Cannot access /oucount: No such file or directory.
+[training@localhost ~]$ hadoop dfs -ls /outcount
+Found 3 items
+-rw-r--r--   1 training supergroup          0 2023-10-26 01:09 /outcount/_SUCCESS
+drwxr-xr-x   - training supergroup          0 2023-10-26 01:08 /outcount/_logs
+-rw-r--r--   1 training supergroup         58 2023-10-26 01:09 /outcount/part-00000
+[training@localhost ~]$ hadoop dfs -cat /outcount/part-00000
+5CSG-01 13
+Shrey   13
+best    13
+is      13
+of      13
+student 13
+the     13
+[training@localhost ~]$ 

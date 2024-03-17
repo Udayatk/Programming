@@ -1,0 +1,61 @@
+1. create database part;
+
+2. use part;
+
+Static Partitioning
+3. create table student (name string, rollno int, percentage float)
+    partitioned by (state string, city string)                      
+    row format delimited                                            
+    fields terminated by ',';  
+
+4. load data local inpath '/home/training/Desktop/Maharastra' into table student
+partition(state='maharastra', city='mumbai');
+
+5. select * from student;
+
+6. load data local inpath '/home/training/Desktop/karnataka' into table student partition(state='karnataka', city='Bengaluru');
+
+7. select * from student;
+
+8. select * from student limit 6;
+
+9. select * from student where state='maharastra';
+
+Dynamic partioning
+Note: By default dynamic partioning will be disabled. We need to enable it using the followng command:
+10. set hive.exec.dynamic.partition=true;
+11. set hive.exec.dynamic.partition.mode=nonstrict;
+
+12. create table stu(name string, rollno int, percentage float, state string, city string) row format delimited fields terminated by ','; 
+
+13. load data local inpath '/home/training/Desktop/Result1' into table stu;
+
+14. create table stud_part (name string, rollno int, percentage float)
+    partitioned by (state string, city string)                      
+    row format delimited                                            
+    fields terminated by ',';  
+
+15. insert overwrite table stud_part
+partition (state, city)
+select name,rollno, percentage
+,state,
+city
+from stu;
+
+16. select * from stud_part where city='tumkur';
+
+Bucketing
+note: To enable bucketing first execute the following command in hive prompt:
+hive> set hive.enforce.bucketing=true;   
+
+1. create database buck;
+
+2. use buck;
+
+3. create table employee(id int, fname string, lname string) row format delimited fields terminated by ','; 
+
+4. load data local inpath '/home/training/Desktop/emp' into table employee;
+
+5. create table buck_table(id int, fname string, lname string) clustered by (id) into 5 buckets row format delimited fields terminated by ',';
+
+6. insert overwrite table buck_table select * from employee;

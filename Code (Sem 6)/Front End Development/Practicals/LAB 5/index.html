@@ -1,0 +1,54 @@
+<!--Ravi is trying to write a program in Javascript to calculate the FIbonacci Series of a given number and the sequare of a given number 
+    series as the assignment is given by class teacher, help Ravi to develop and demonstrate a HTML file that includes Javascript script 
+    for the following problems: 
+    a)Input: A number n is obtained using prompt
+    Output: The first n is Fibonacci numbers
+    b)Input: A number n is obtained using prompt
+    Output: A table of numbers from 1 to n nd their squares using alert-->
+<!<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Fibonacci Series</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script type="text/Javascript">
+            var fib1 = 0,
+        fib2 = 0;
+      var num = prompt("Enter a number :\n", "");
+      if (num != null && num > 0) {
+        document.write("<h1>The first" + num + "numbers in the fibonacci series</h2>");
+        if (num == 1) {
+          document.write("<h2>" + fib1 + "</h2>");
+        } else {
+          document.write("<h2>" + fib1 + "</h2>");
+          document.write("<h2>" + fib2 + "</h2>");
+        }
+        for (i = 3; i <= num; i + 1) {
+          fib = fib1 + fib2;
+          document.write("<h2>" + fib + "</h2>");
+          fib1 = fib2;
+          fib2 = fib;
+        }
+      } else {
+        alert("Invalid Input");
+      }
+    </script>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <h2>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h2>
+    <script src="" async defer></script>
+  </body>
+</html>

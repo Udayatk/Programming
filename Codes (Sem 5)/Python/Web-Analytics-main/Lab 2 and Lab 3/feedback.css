@@ -1,0 +1,111 @@
+/* General styles */
+body {
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  background-color: #bdcfff;
+  background-image: url("../Lab 2 and Lab 3/Assets/presidency university.jfif");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header styles */
+header {
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 3%;
+}
+nav a {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#m1 {
+  text-align: center;
+}
+/* Menu section styles */
+section {
+  display: flex;
+  padding: 50px;
+}
+
+/* Footer styles */
+footer {
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/*Header Tags*/
+#top {
+  position: fixed;
+  background-color: #bdcfff;
+  width: 100%;
+  z-index: 1;
+  transition: 0.2s;
+  font-size: 20px;
+  padding: 1%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: absolute;
+}
+
+a {
+  color: #000000;
+}
+
+a:link {
+  color: #000000;
+  background-color: transparent;
+  text-decoration: none;
+  background: linear-gradient(to left, #bdcfff 50%, #000000 50%) right;
+  background-size: 300%;
+  transition: 0.2s ease-out;
+}
+a:hover {
+  color: #bdcfff;
+  background-color: transparent;
+  background-position: left;
+  padding: 10px;
+}
+
+.form {
+  float: right;
+  margin-top: 160px;
+  margin-right: 550px;
+  color: #fff;
+}
+label {
+  padding-top: 100px;
+  font-size: 20px;
+}
+#name,
+#dob,
+#age,
+#email,
+#website {
+  float: right;
+  margin-left: 100px;
+  height: 8%;
+  width: 50%;
+}
+
+input.search {
+  float: right;
+}
+#male,
+#female {
+  padding-top: 100px;
+  position: relative;
+  left: 50px;
+}
+td,tr,th{
+  color: #fff;
+}

@@ -1,0 +1,91 @@
+Experiment 7 & 8 
+Hive 1---DDL, Create,datatypes (SQL), string,int,varchar,date
+Hive 2---Partitions, Buckets
+
+open terminal and type hive
+>hive
+
+
+1. To display the existing databases:
+show databases;
+
+2. To create a new database: (Database name is "demo")
+create database demo; create database student_163;
+
+3. To select a required database: (Selected database is "demo")
+use demo;
+
+4. To create a table in the selected database: (Table name is "student")
+
+create table student(name string,rollno string,age int)row format delimited fields terminated by ',';
+
+
+
+5. To insert data into table "student" from a file "Student1" that is stored in local file system:
+
+load data local inpath '/home/training/Desktop/Student1' into table student;
+select * from student;
+converted to mapreduce jobs 
+
+6. To insert some more data into table "student" from a file "Student2" that is stored in local file system:
+load data local inpath '/home/training/Desktop/Student2' into table student;
+
+7. To insert some more data into table "student" from a file "Student3" that is stored in local file system: (Student 3 has some field types different from what the schema is defined)
+load data local inpath '/home/training/Desktop/Student3' into table student;
+
+8. To display metadata about the table:
+describe student;
+
+9. To display detailed metadata about the table:
+describe extended student;
+
+10. To insert data into table "student" from a file "Student4" that is stored in hdfs:
+   First load the data from local file sytem into hdfs. This can be done using the following command:
+    
+   $ cd Desktop
+   $ hadoop dfs -put stu4 /student4.txt
+   Then load the data from hdfs into hive table: 
+   load data inpath '/student4.txt' into table student;
+Note: once loaded the file "Student4" will be moved from its path into given hive table "student"
+
+11. To display the contents of table "student":
+select count(*) from student;
+
+12. To display the name "Akash" in uppercase:
+select upper(name)
+from student
+where name='Akash';
+
+Execute some more select with aggregate functions
+
+13. To create external table "studextern" in the path "/hivedata":
+     create external table studextern(
+     name string,                     
+     rollno string,                   
+     age int                          
+     )row format delimited            
+     fields terminated by ','         
+     location '/hivedata';  
+
+14. To insert data into external table "studextern":
+    hadoop dfs -put Student1 /hivedata
+    Note: Just load the file into "/hivedata". All the contents of the file will be inserted into the
+    table "studextern"
+
+15. To display the contents of table "studextern"
+     select * from studextern;
+
+Note: Internal table will be in "/user/hive/warehouse"
+Note: External table will be in the path where the data is stored.
+
+16. To remove internal table "student":
+    drop table student;
+
+17. To remove external table "studextern"
+    drop table studextern;
+
+18. To remove database
+    drop database demo;
+
+Note: When external table is dropped its schema is dropped but data still exists. Can be checked in browser.
+Note: When internal table is dropped its schema and also data is deleted.

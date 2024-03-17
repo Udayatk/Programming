@@ -1,0 +1,54 @@
+/*Is this a comment man?*/
+.humans{
+    color: brown;
+}
+#black{
+    color:black
+}
+#gay{
+    animation-name: stretch; 
+    animation-duration: 3.0s; 
+    animation-timing-function: ease-out; 
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+    animation-play-state: running; 
+}
+@keyframes stretch { 
+    0% { 
+        color: #E50000; 
+    } 
+    20% { 
+        color: #FF8D00;  
+    } 
+    40% { 
+        color: #FFEE00; 
+    } 
+    60% {  
+        color: #028121;  
+    } 
+
+    80% { 
+        color: #004CFF; 
+    } 
+
+    100% { 
+        color: #770088; 
+    } 
+} 
+img{
+    height: 200;
+    width: auto;
+}
+[src$=avif]{
+    height: 300;
+    width: auto;
+}
+[src*=vct]{
+    height: 300;
+    width: auto;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}

@@ -1,0 +1,102 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+  <title>My Restaurant</title>
+  <style>
+    body {
+      font-family: "Rubik Mono One", monospace;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="top">
+    <h1 id="home"><a href="index.html">Take It Away</a></h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#m1">Menu</a>
+      <a href="#c1">Contact Us</a>
+    </nav>
+  </header>
+  <main>
+    <div class="img">
+      <h2><br />About Us</h2>
+      <p id="text">
+        <br />
+        Born from family recipes and simmering dreams, Take It Away isn't just
+        a restaurant, it's a legacy. Our story began years ago, in kitchens
+        fragrant with spices and alive with the warmth of loved ones. Now, we
+        bring those cherished flavors to you, offering a taste of India's rich
+        heritage. But our journey doesn't end there. We're constantly
+        innovating, exploring new avenues while staying true to our roots.
+        Like a well-seasoned dish, we evolve, but the core remains the same:
+        sharing authentic Indian fare cooked with love. So, join us on this
+        culinary adventure. Savor the past, relish the present, and discover
+        the delicious future of Tikka Take It Away.
+      </p>
+    </div>
+    <h2 id="m1">MENU</h2>
+    <section>
+      <div class="menu-item">
+        <img src="menu-item1.jpeg" alt="Pizza image" />
+        <h3>pizza</h3>
+        <p>
+          If you’re a vegetarian, you’ll love Domino’s Veg Extravaganza, Indi
+          Tandoori Paneer, and Mexican Green Wave. For non-vegetarians,
+          Non-Veg Supreme, Chicken Fiesta, and Indi Chicken Tikka top the
+          list. Though these are the most loved Domino’s pizzas along with the
+          cheesy Margherita pizza, you should check out the Domino’s menu to
+          see what you like the most.
+        </p>
+      </div>
+      <div class="menu-item">
+        <img src="menu-item1.jpeg" alt="burger image" />
+        <h3>Burger</h3>
+        <p>
+          Nine Different Types of Burgers to Make Turkey burger. ...
+          Portobello mushroom burger. ... Veggie burger. ... Wild salmon
+          burger. ... Bean burger. ... Cheeseburger
+        </p>
+      </div>
+      // Make one division for pasta
+    </section>
+  </main>
+  <section>
+    <div id="grad1">
+      <h1 id="c1">contact us</h1>
+    </div>
+    <div id="rot">
+      <h1>feedback</h1>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 My Restaurant</p>
+  </footer>
+
+  <script>
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        document.getElementById("top").style.fontSize = "15px";
+      } else {
+        document.getElementById("top").style.fontSize = "20px";
+      }
+    }
+  </script>
+</body>
+
+</html>

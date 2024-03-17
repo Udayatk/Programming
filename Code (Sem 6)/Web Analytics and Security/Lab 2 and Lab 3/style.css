@@ -1,0 +1,192 @@
+/* General styles */
+body {
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  background-color: #BDCFFF;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header styles */
+header {
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 3%;
+}
+nav a {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#m1 {
+  text-align: center;
+}
+/* Menu section styles */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+}
+.menu-item {
+  flex-basis: 30%;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 10px #999;
+  border: gold solid 5px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.menu-item img {
+  width: auto;
+  height: 400px;
+  margin-bottom: 20px;
+}
+.menu-item h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.menu-item p {
+  color: #000;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Footer styles */
+footer {
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/*Header Tags*/
+#top {
+  position: fixed;
+  background-color: #BDCFFF;
+  width: 100%;
+  z-index: 1;
+  transition: 0.2s;
+  font-size: 20px;
+  padding: 1%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+a {
+  color: #000000;
+}
+
+a:link {
+  color: #000000;
+  background-color: transparent;
+  text-decoration: none;
+  background: linear-gradient(to left, #BDCFFF 50%, #000000 50%) right;
+  background-size: 300%;
+  transition: 0.2s ease-out;
+}
+a:hover {
+  color: #BDCFFF;
+  background-color: transparent;
+  background-position: left;
+  padding: 10px;
+}
+
+/*About Us Tag*/
+.img {
+  background-image: url("../Lab 2 and Lab 3/Assets/presidency university.jfif");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 80%;
+  float: right;
+  overflow: auto;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 160px;
+  object-fit: contain;
+  object-position: -20% 0%;
+  overflow: hidden;
+}
+.img::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.text {
+  width: 640px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+}
+#text {
+  padding-left: 200px;
+  padding-right: 200px;
+  text-overflow: clip;
+}
+#box {
+  height: 600px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  float: left;
+}
+video {
+  border: #fff solid 7px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+audio {
+  overflow: hidden;
+  position: relative;
+  padding-top: 50px;
+}
+#musicplayer {
+  position: relative;
+  display: block;
+}
+.player {
+  width: auto;
+  height: 300px;
+  background: #fff;
+  /*   margin: 100px; */
+  padding: 20px 14px 8px 14px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 2px 90px -11px rgba(13, 100, 76, 0.75);
+  -webkit-box-shadow: 10px 2px 90px -11px rgba(13, 100, 76, 0.75);
+  -moz-box-shadow: 10px 2px 90px -11px rgba(13, 100, 76, 0.75);
+}
+
+.imgBx img {
+  width: auto;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+
+}
+
+.player audio {
+  border-radius: 6px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  padding-top: 30px;
+  position: relative;
+  left: 90px;
+}
+#bottom{
+  position: relative;
+  top: 700px;
+}
+footer{
+  position: relative;
+  top: 700px;
+}

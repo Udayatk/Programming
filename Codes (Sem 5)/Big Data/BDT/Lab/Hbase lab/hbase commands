@@ -1,0 +1,84 @@
+hbase shell
+
+version
+
+status 'simple'
+status 'summary'
+status 'detailed'
+
+Data Definition Language :
+
+1.create
+
+create 'emp', 'personal data', 'professional data' 
+
+2.list 
+
+list
+
+3.disable 
+
+disable 'emp'
+
+4.is_disabled 
+
+is_disabled 'emp'
+
+5.enable 
+
+enable 'emp'
+
+6.is_enabled 
+
+is_enabled 'emp'
+
+7.describe
+
+describe 'emp' 
+
+8.drop dont do it in lab
+
+drop 'emp' 
+
+
+Data Manipulation Language  :
+
+9.put :
+put 'emp','1','personal data:name','raju'
+put 'emp','1','personal data:city','hyderabad'
+put 'emp','1','professional data:designation','manager'
+put 'emp','1','professional data:salary','50000'
+put 'emp','1','professional data:vechiv','50000' 
+put 'emp','2','personal data:name','sathish'
+put 'emp','2','personal data:city','bangalore'
+put 'emp','2','professional data:designation','professor'
+put 'emp','2','professional data:salary','60000'
+put 'emp','3','personal data:name','muthu'
+put 'emp','3','personal data:city','chennai'
+put 'emp','3','professional data:designation','analyst'
+put 'emp','3','professional data:salary','20000'
+
+
+10.get
+
+get 'emp', '1' 
+
+11.delete
+
+delete 'emp', '1', 'personal data:city' <Timestamp valu>
+
+12.deleteall 
+
+deleteall 'emp','1'
+
+13.scan 
+
+scan 'emp'
+
+14.count
+
+count 'emp'
+
+15.truncate
+
+truncate 'emp' 

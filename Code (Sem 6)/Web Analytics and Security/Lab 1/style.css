@@ -1,0 +1,29 @@
+table{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    align-self: center;
+}
+th ,td{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+section{
+    text-align: left;
+}
+img{
+    padding: 5px;
+    border-radius: 20px;
+    transition: transform .1s;
+}
+img:hover {
+    transform: scale(1.5);
+    
+}
+.rotate{
+    transform: rotate(90deg);
+}
+.rotate:hover{
+    transform: rotate(450deg);
+}

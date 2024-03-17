@@ -1,0 +1,34 @@
+We do not speciify the type of variable a,which has a value of 5 from an integer. The python interpreter 
+will automatically interprets the variable. We can verify the type of the program used variable thanks to
+Python. The type() function in python returns the type of the passed variable
+
+Python Data Types
+1.Numeric-> 1.integer
+            2.Complex
+            3.Float
+2.Dictionary
+3.Boolean
+4.Set
+5.Sequence Type->   1.String
+                    2.List
+                    3.Tuple
+
+Variable-It is the name given to the memory location. A value holding-python variable is also known 
+as an identifier.
+
+Python is an infer language that is smart enough to determine the type of a variable,we do no need 
+to speciify its type in Python
+
+Type Casting
+
+
+
+Different Types of numbers
+1.Armstrong numbers
+2.Palindrome
+3.Spy numbers
+4.perfect numbers
+5.neon numbers
+6.fabonacci series
+7.prime numbers
+8.happy numbers
