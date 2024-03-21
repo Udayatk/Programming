@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      /* Basic styling for the form */
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      label,
+      input,
+      select {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+        <option value="nonbinary">Non Binary</option>
+      </select>
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      const form = document.getElementById("registrationForm");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Validation using regex
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const age = document.getElementById("age").value;
+        const gender = document.getElementById("gender").value;
+
+        // Regex patterns for validation
+        const namePattern = /^[a-zA-Z]+$/;
+        const phonePattern = /^\d{10}$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+        // Check if each input field matches the pattern
+        if (!firstName.match(namePattern)) {
+          showError("First Name must contain only letters");
+          return;
+        }
+        if (!lastName.match(namePattern)) {
+          showError("Last Name must contain only letters");
+          return;
+        }
+        if (!phoneNumber.match(phonePattern)) {
+          showError("Phone Number must be 10 digits");
+          return;
+        }
+        if (!email.match(emailPattern)) {
+          showError("Invalid Email Address");
+          return;
+        }
+        if (!password.match(passwordPattern)) {
+          showError(
+            "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number"
+          );
+          return;
+        }
+        if (age < 18 || age > 120) {
+          showError("Invalid Age");
+          return;
+        }
+        if (gender === "") {
+          showError("Please select a Gender");
+          return;
+        }
+
+        // If all fields are valid, submit the form
+        alert("Form submitted successfully!");
+        form.reset(); // Reset the form
+      });
+
+      function showError(message) {
+        const errorDiv = document.createElement("div");
+        errorDiv.className = "error";
+        errorDiv.textContent = message;
+        form.insertBefore(errorDiv, form.childNodes[0]); // Insert error message before the form
+        setTimeout(function () {
+          errorDiv.remove(); // Remove error message after 3 seconds
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
