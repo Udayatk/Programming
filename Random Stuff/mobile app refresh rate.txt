@@ -1,0 +1,11 @@
+calculator-120
+calendar-120
+cod-120
+camera-60
+cashew-120
+chrome-120
+clock-90
+contacts-120
+discord-90
+fit-90
+games-90
