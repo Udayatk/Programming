@@ -1,107 +1,95 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
-class Student {
-
+class Student{
   int rollno;
   String name;
   float fees;
   String branch;
   int year;
-  int age;
   int sem;
+  int age;
   static String clg;
 
-  public Student(
-    int rollno,
-    String name,
-    float fees,
-    String branch,
-    int year,
-    int age,
-    int sem
-  ) {
-    this.rollno = rollno;
-    this.name = name;
-    this.fees = fees;
-    this.branch = branch;
-    this.year = year;
-    this.age = age;
-    this.sem = sem;
-    clg = "PU";
+  public Student(int rollno,String name,float fees,String branch,int year,int sem,int age){
+    this.age=age;
+    this.name=name;
+    this.fees=fees;
+    this.branch=branch;
+    this.year=year;
+    this.sem=sem;
+    this.age=age;
+    clg="PU";
   }
 
-  public String toString() {
-    return (
-      rollno +
-      " " +
-      name +
-      " " +
-      fees +
-      " " +
-      branch +
-      " " +
-      year +
-      sem +
-      " " +
-      age +
-      " " +
-      clg +
-      "\n"
-    );
+  public String toString(){
+    return rollno+" "+name+" "+fees+" "+branch+" "+year+" "+sem+" "+age+" "+clg;
   }
 }
 
-class AgeComparator implements Comparator {
-
-  public int compare(Object o1, Object o2) {
-    Student s1 = (Student) o1;
-    Student s2 = (Student) o2;
-    if (s1.age == s2.age) {
+class ageComparator implements Comparator{
+  public int compare(Object o1,Object o2){
+    Student s1=(Student) o1;
+    Student s2=(Student) o2;
+    if(s1.age==s2.age){
       return 0;
-    } else if (s1.age > s2.age) {
+    }else if(s1.age>s2.age){
       return 1;
-    } else {
+    }else{
       return -1;
     }
   }
 }
 
-class FeesCompator implements Comparator {
-
-  public int compare(Object o1, Object o2) {
-    Student s1 = (Student) o1;
-    Student s2 = (Student) o2;
-    if (s1.fees == s2.fees) {
+class feesComparator implements Comparator{
+  public int compare(Object o1,Object o2){
+    Student s1=(Student) o1;
+    Student s2=(Student) o2;
+    if(s1.fees==s2.fees){
       return 0;
-    } else if (s1.fees > s2.fees) {
+    }else if(s1.fees>s2.fees){
       return 1;
-    } else {
+    }else{
       return -1;
     }
   }
 }
 
-class NameComparator implements Comparator {
-
-  public int compare(Object o1, Object o2) {
-    Student s1 = (Student) o1;
-    Student s2 = (Student) o2;
+class nameComparator implements Comparator{
+  public int compare(Object o1,Object o2){
+    Student s1=(Student) o1;
+    Student s2=(Student) o2;
     return s1.name.compareTo(s2.name);
   }
 }
-
 public class prac1 {
-
   public static void main(String[] args) {
-    ArrayList s1 = new ArrayList<>();
-    s1.add(new Student(1, "adi", 18000.00f, "cse", 2004, 6, 18));
+    ArrayList s = new ArrayList();
+    s.add(new Student(1, "adi", 18000.00f, "cse", 1, 2, 20));
+    s.add(new Student(1, "vib", 20000.00f, "ist", 2, 4, 19));
+    System.out.println("Printin shit below");
+    System.out.println("");
+    System.out.println("Sorting by age");
+    Collections.sort(s,new ageComparator());
+    Iterator itr1=s.iterator();
+    while(itr1.hasNext()){
+      Student st=(Student)itr1.next();
+      System.out.println(st);
+    }
+    System.out.println("");
     System.out.println("Sorting by name");
-    System.out.println();
-    Collections.sort(s1, new NameComparator());
-    Iterator itr = s1.iterator();
-    while (itr.hasNext()) {
-      Student st = (Student) itr.next();
+    Collections.sort(s,new nameComparator());
+    Iterator itr2=s.iterator();
+    while(itr2.hasNext()){
+      Student st=(Student)itr2.next();
+      System.out.println(st);
+    }
+    System.out.println("");
+    System.out.println("Sorting by fees");
+    Collections.sort(s,new feesComparator());
+    Iterator itr3=s.iterator();
+    while(itr3.hasNext()){
+      Student st=(Student)itr3.next();
       System.out.println(st);
     }
   }
