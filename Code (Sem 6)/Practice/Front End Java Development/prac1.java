@@ -71,25 +71,25 @@ public class prac1 {
     System.out.println("");
     System.out.println("Sorting by age");
     Collections.sort(s,new ageComparator());
-    Iterator itr1=s.iterator();
-    while(itr1.hasNext()){
-      Student st=(Student)itr1.next();
+    Iterator itr=s.iterator();
+    while(itr.hasNext()){
+      Student st=(Student)itr.next();
       System.out.println(st);
     }
     System.out.println("");
     System.out.println("Sorting by name");
     Collections.sort(s,new nameComparator());
-    Iterator itr2=s.iterator();
-    while(itr2.hasNext()){
-      Student st=(Student)itr2.next();
+    itr=s.iterator();
+    while(itr.hasNext()){
+      Student st=(Student)itr.next();
       System.out.println(st);
     }
     System.out.println("");
     System.out.println("Sorting by fees");
     Collections.sort(s,new feesComparator());
-    Iterator itr3=s.iterator();
-    while(itr3.hasNext()){
-      Student st=(Student)itr3.next();
+    itr=s.iterator();
+    while(itr.hasNext()){
+      Student st=(Student)itr.next();
       System.out.println(st);
     }
   }
