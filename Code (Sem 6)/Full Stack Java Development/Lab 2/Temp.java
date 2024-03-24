@@ -23,7 +23,7 @@ class Student {
     }
 
     public String toString() {
-        return rollno + "" + name + "" + fees + "" + branch + "" + year + sem + "" + age + "" + clg + "\n";
+        return rollno + " " + name + " " + fees + " " + branch + " " + year + sem + " " + age + " " + clg + "\n";
     }
 
 }
