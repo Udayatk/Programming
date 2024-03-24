@@ -19,29 +19,23 @@ class Student{
     }
 }
 
-public class prac2 {
+public class prac2{
     public static void main(String[] args) {
-        List<Student> s=new ArrayList<Student>();
+        List<Student> s= new ArrayList<Student>();
         s.add(new Student(1, "adi", 20, 18000.00f));
-        s.add(new Student(2, "vib", 19, 20000.00f));
-        s.add(new Student(3, "aadii", 21, 22000.00f));
-        System.out.println("Printin Shit below");
+        s.add(new Student(2, "vib", 20, 15000.00f));
+        System.out.println("Prinitn");
         System.out.println("");
-        System.out.println("Printin based on name");
-        System.out.println("");
+        System.out.println("Sorting by name");
         Collections.sort(s,(s1,s2)->{return s1.name.compareTo(s2.name);});
         s.forEach((l)->System.out.println(l));
         System.out.println("");
-        System.out.println("Printin based on age");
-        System.out.println("");
+        System.out.println("Sorting by age");
         Collections.sort(s,(s1,s2)->s1.age-s2.age);
         s.forEach((l)->System.out.println(l));
         System.out.println("");
-        System.out.println("Printin based on fees");
-        System.out.println("");
+        System.out.println("Sorting by name");
         Collections.sort(s,(s1,s2)->(int)s1.fees-(int)s2.fees);
         s.forEach((l)->System.out.println(l));
-        System.out.println("");
-
     }
 }
