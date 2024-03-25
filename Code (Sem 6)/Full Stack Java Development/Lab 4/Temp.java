@@ -49,11 +49,9 @@ public class Temp {
           case 2:
             System.out.println("Enter employee number:");
             eno = sc.nextInt();
-            query = "delete from  emp where eno='" + eno + "'";
+            query = "delete from  emp where eno=" + eno + " ";
             stmt.executeUpdate(query);
-            System.out.println(
-              "Record is deleted from the table successfully.................."
-            );
+            System.out.println("Record deleted successfully..");
             break;
           case 3:
             PreparedStatement ps = null;
@@ -66,7 +64,7 @@ public class Temp {
             ps.setString(1, ename);
             ps.setInt(2, eno);
             ps.executeUpdate();
-            System.out.println("Record is updated successfully......");
+            System.out.println("Record updated successfully......");
             break;
           case 4:
             ResultSet rs = stmt.executeQuery("select * from emp");
