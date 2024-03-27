@@ -1,0 +1,4 @@
+for(let i=0;i<lengthof Array;i++){console.log(i,array_name[i])}
+array_name.forEach((i,array_name[i])=>console.log(i,array_name[i]))
+
+array / collection of data.forEach((currentElement)={you logic for current element })

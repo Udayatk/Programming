@@ -1,0 +1,45 @@
+/* Element Selector */
+/*
+h2{
+    color: red;
+}*/
+
+/* class Selector
+.teacher{
+    color:blue ;
+}
+.student{
+    color: red;
+}
+ */
+
+/*Id Selector*/
+#PUNIV02105{
+    color: red;
+}
+#PUNIV02106{
+    color: blue;
+}
+#CBD001{
+    color: pink;
+}
+#CBD002{
+    color:green;
+}
+#CBD003{
+    color:purple;
+}
+/*
+[src$=".jpeg"]
+{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+*/
+[src*="world cup"]
+{
+    width: 500px;
+    height: 500px;
+    border: 2px solid red;
+}

@@ -1,0 +1,10 @@
+Design a web form for signing up with the following fields:
+•	Name: a required text input field for the user's name
+•	Date of Birth: a required date input field for the user's date of birth
+•	Age: a range input field for the user's age, with a minimum value of 18 and a maximum value of 100
+•	Email: a required email input field for the user's email address
+•	Website: an optional URL input field for the user's website
+•	Sign Up button: a submit button for submitting the form
+The form also can include some JavaScript code that adds some functionality to the form:
+Conditional logic to show or hide fields based on the user's age. If the user is under 18, the age range input field, email input field, and website input field will be hidden. If the user is between 18 and 25, the age range input field and email input field will be shown, but the website input field will be hidden. If the user is over 25, all fields will be shown.
+Inline validation for required fields. If a required field is left blank, a message will be displayed asking the user to fill out the field. A helper function to calculate the user's age based on their date of birth.

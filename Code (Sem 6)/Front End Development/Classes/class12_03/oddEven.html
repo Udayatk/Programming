@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <h1>Odd and Even number</h1>
+    <script>
+      let myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      document.write("<h3>Odd Numbers</h3>");
+      myNumbers.forEach((element, index) => {
+        if (element % 2 != 0) {
+          document.write(`<p>index=${index} element=${element}<p>`);
+        }
+      });
+
+      document.write("<h3>Even Numbers</h3>");
+      myNumbers.forEach((element, index) => {
+        if (element % 2 == 0) {
+          document.write(`<p>index=${index} element=${element}<p>`);
+        }
+      });
+    </script>
+    <script src="" async defer></script>
+  </body>
+</html>

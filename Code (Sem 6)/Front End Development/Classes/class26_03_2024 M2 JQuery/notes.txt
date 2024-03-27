@@ -1,0 +1,15 @@
+include jQuery lib
+two ways
+1. download -> save as jQuery.js
+2. CDN <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+paste inside <head>ctrl+v </head>
+
+Syntax of jQuery
+$('selector').action()
+slector-> <p id="one" class="myP"></p>  ->p#one ->p.myP ->paste
+action->effect -> show(),hide(),toggle(),fadeOut(),fadeIn(),fadeTo("slow","0.5")
+event-> mouse event, keyboad event 
+$('selector').event(()=>{what to do })
+animate css component 
+
+$().show/hide/toggle(time-mili seconds-optional,callback()-optional)
