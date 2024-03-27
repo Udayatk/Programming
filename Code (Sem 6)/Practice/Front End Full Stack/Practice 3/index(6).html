@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopSmart Order Form</title>
+  </head>
+  <body>
+    <h1>ShopSmart Order Form</h1>
+    <form id="orderForm" onsubmit="submitOrder(event)">
+      <h2>Customer Information</h2>
+      <label>Name:</label
+      ><input type="text" id="name" name="name" required /><br />
+      <label>Email:</label
+      ><input type="email" id="email" name="email" required /><br />
+      <label>Shipping Address:</label
+      ><textarea
+        id="address"
+        name="address"
+        rows="4"
+        cols="50"
+        required
+      ></textarea
+      ><br />
+      <label>Phone Number:</label
+      ><input type="tel" id="phone" name="phone" required /><br />
+
+      <h2>Product Selection</h2>
+      <label>Select Product:</label>
+      <select id="product" onchange="updateOrderSummary()">
+        <option value="">Select Product</option>
+        <option value="Product A">Product A</option>
+        <option value="Product B">Product B</option>
+        <option value="Product C">Product C</option></select
+      ><br />
+      <label>Size:</label>
+      <select id="size">
+        <option value="">Select Size</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option></select
+      ><br />
+      <label>Color:</label>
+      <select id="color">
+        <option value="">Select Color</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option></select
+      ><br />
+      <label>Quantity:</label
+      ><input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        value="1"
+        required
+      /><br />
+
+      <h2>Payment Information</h2>
+      <label>Credit Card Number:</label
+      ><input
+        type="text"
+        id="creditCardNumber"
+        name="creditCardNumber"
+        required
+      /><br />
+      <label>Expiry Date:</label
+      ><input
+        type="text"
+        id="expiryDate"
+        name="expiryDate"
+        placeholder="MM/YYYY"
+        required
+      /><br />
+      <label>CVV:</label
+      ><input type="text" id="cvv" name="cvv" required /><br />
+
+      <h2>Shipping Options</h2>
+      <input
+        type="radio"
+        id="standardShipping"
+        name="shipping"
+        value="Standard"
+        onchange="updateOrderSummary()"
+        checked
+      />
+      <label for="standardShipping">Standard Shipping</label><br />
+      <input
+        type="radio"
+        id="expressShipping"
+        name="shipping"
+        value="Express"
+        onchange="updateOrderSummary()"
+      />
+      <label for="expressShipping">Express Shipping</label><br />
+
+      <h2>Order Summary</h2>
+      <div id="orderSummary"></div>
+
+      <button type="button" onclick="addToCart()">Add to Cart</button>
+      <button type="submit">Checkout</button>
+    </form>
+
+    <script>
+      function updateOrderSummary() {
+        const product = document.getElementById("product").value;
+        const size = document.getElementById("size").value;
+        const color = document.getElementById("color").value;
+        const quantity = document.getElementById("quantity").value;
+        const shipping = document.querySelector(
+          'input[name="shipping"]:checked'
+        ).value;
+        const totalCost = calculateTotalCost(product, quantity, shipping);
+
+        const orderSummaryDiv = document.getElementById("orderSummary");
+        orderSummaryDiv.innerHTML = `
+        <p><strong>Product:</strong> ${product}</p>
+        <p><strong>Size:</strong> ${size}</p>
+        <p><strong>Color:</strong> ${color}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+        <p><strong>Shipping:</strong> ${shipping}</p>
+        <p><strong>Total Cost:</strong> $${totalCost.toFixed(2)}</p>
+      `;
+      }
+
+      function calculateTotalCost(product, quantity, shipping) {
+        let productPrice = 0;
+        switch (product) {
+          case "Product A":
+            productPrice = 50;
+            break;
+          case "Product B":
+            productPrice = 70;
+            break;
+          case "Product C":
+            productPrice = 90;
+            break;
+          default:
+            productPrice = 0;
+        }
+        const shippingCost = shipping === "Express" ? 20 : 10;
+        return productPrice * quantity + shippingCost;
+      }
+      function submitOrder(event) {
+        event.preventDefault();
+        // Integration with payment gateway goes here
+        alert("Order placed successfully!");
+      }
+      function addToCart() {
+        alert("Product added to cart!");
+      }
+    </script>
+  </body>
+</html>

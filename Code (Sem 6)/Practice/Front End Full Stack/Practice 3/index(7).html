@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Event Registration Form</title>
+    <meta
+      name="description"
+      content="CommunityConnect Event Registration Form"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style></style>
+  </head>
+  <body>
+    <h1>Event Registration Form</h1>
+    <form id="registrationForm">
+      <div>
+        Name:
+        <input type="text" id="name" required />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" required />
+      </div>
+
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+      </div>
+
+      <div>
+        <label for="gender">Gender:</label>
+        <label
+          ><input type="radio" name="gender" value="Male" required />
+          Male</label
+        >
+        <label
+          ><input type="radio" name="gender" value="Female" required />
+          Female</label
+        >
+        <label
+          ><input type="radio" name="gender" value="Other" required />
+          Other</label
+        >
+      </div>
+
+      <div>
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" required onchange="toggleAdditionalFields()">
+          <option value="">Select event type</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Fitness Class">Fitness Class</option>
+          <option value="Cultural Event">Cultural Event</option>
+        </select>
+      </div>
+
+      <div id="workshopTopic">
+        <label for="workshopTopic">Workshop or Event Topic:</label>
+        <input type="text" id="workshopTopicInput" />
+      </div>
+
+      <div id="fitnessLevel">
+        <label for="fitnessLevel">Preferred Fitness Level:</label>
+        <label
+          ><input type="radio" name="fitnessLevel" value="Beginner" required />
+          Beginner</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="fitnessLevel"
+            value="Intermediate"
+            required
+          />
+          Intermediate</label
+        >
+        <label
+          ><input type="radio" name="fitnessLevel" value="Advanced" required />
+          Advanced</label
+        >
+      </div>
+
+      <div>
+        <label for="eventDate">Event Date:</label>
+        <input type="date" id="eventDate" name="eventDate" required />
+      </div>
+
+      <div>
+        <label>Dietary Restrictions:</label>
+        <label
+          ><input type="checkbox" id="veg" value="Vegetarian" />
+          Vegetarian</label
+        >
+        <label><input type="checkbox" id="vegan" value="Vegan" /> Vegan</label>
+        <label
+          ><input type="checkbox" id="gluten" value="Gluten-free" />
+          Gluten-free</label
+        >
+      </div>
+
+      <div>
+        <label for="emergencyContactName">Emergency Contact Name:</label>
+        <input
+          type="text"
+          id="emergencyContactName"
+          name="emergencyContactName"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="emergencyContactNumber">Emergency Contact Number:</label>
+        <input
+          type="tel"
+          id="emergencyContactNumber"
+          name="emergencyContactNumber"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="comments">Comments:</label>
+        <textarea id="comments"></textarea>
+      </div>
+
+      <div>
+        <input type="submit" value="Submit" onclick="cost()" />
+
+        <p id="Result"></p>
+      </div>
+
+      <script>
+        const eventType = document.getElementById("eventType");
+        const fitnessLevel = document.getElementById("fitnessLevel");
+        const workshopTopic = document.getElementById("workshopTopic");
+
+        const vegetarian = document.querySelector("#veg");
+        const vegan = document.querySelector("#vegan");
+        const gluten = document.querySelector("#gluten");
+
+        let isEmpty = (string) => (string.length == 0 ? true : false);
+
+        function toggleAdditionalFields() {
+          if (eventType.value == "Fitness Class") {
+            fitnessLevel.style.display = "block";
+            workshopTopic.style.display = "none";
+          } else if (
+            eventType.value == "Workshop" ||
+            eventType.value == "Cultural Event"
+          ) {
+            fitnessLevel.style.display = "none";
+            workshopTopic.style.display = "block";
+          } else {
+            fitnessLevel.style.display = "none";
+            workshopTopic.style.display = "none";
+          }
+        }
+        toggleAdditionalFields();
+
+        let check = true;
+
+        function cost() {
+          check = true;
+
+          if (check) {
+            if (isEmpty(document.getElementById("name").value)) {
+              alert("Name is empty");
+              check = false;
+            }
+
+            if (isEmpty(document.getElementById("email").value)) {
+              alert("Email is empty");
+              check = false;
+            }
+          }
+          let cost = 0;
+          if (eventType.value == "Fitness Class") {
+            cost = 150;
+          } else if (eventType.value == "Cultural Event") {
+            cost = 250;
+          } else if (eventType.value == "Workshop") {
+            cost = 350;
+          }
+
+          if (vegetarian.checked) {
+            cost = cost + 100;
+          }
+          if (vegan.checked) {
+            cost = cost + 150;
+          }
+          if (gluten.checked) {
+            cost = cost + 200;
+          }
+
+          if (check == true)
+            document.getElementById("Result").innerHTML = "Rs. " + cost;
+        }
+      </script>
+    </form>
+  </body>
+</html>
