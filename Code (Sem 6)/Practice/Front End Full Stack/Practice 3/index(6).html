@@ -9,21 +9,10 @@
     <h1>ShopSmart Order Form</h1>
     <form id="orderForm" onsubmit="submitOrder(event)">
       <h2>Customer Information</h2>
-      <label>Name:</label
-      ><input type="text" id="name" name="name" required /><br />
-      <label>Email:</label
-      ><input type="email" id="email" name="email" required /><br />
-      <label>Shipping Address:</label
-      ><textarea
-        id="address"
-        name="address"
-        rows="4"
-        cols="50"
-        required
-      ></textarea
-      ><br />
-      <label>Phone Number:</label
-      ><input type="tel" id="phone" name="phone" required /><br />
+      <label>Name:</label><input type="text" id="name" name="name" required /><br />
+      <label>Email:</label><input type="email" id="email" name="email" required /><br />
+      <label>Shipping Address:</label><textarea id="address" name="address" rows="4" cols="50" required></textarea><br />
+      <label>Phone Number:</label><input type="tel" id="phone" name="phone" required /><br />
 
       <h2>Product Selection</h2>
       <label>Select Product:</label>
@@ -47,52 +36,17 @@
         <option value="Blue">Blue</option>
         <option value="Green">Green</option></select
       ><br />
-      <label>Quantity:</label
-      ><input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        value="1"
-        required
-      /><br />
+      <label>Quantity:</label><input type="number" id="quantity" name="quantity" min="1" value="1" required /><br />
 
       <h2>Payment Information</h2>
-      <label>Credit Card Number:</label
-      ><input
-        type="text"
-        id="creditCardNumber"
-        name="creditCardNumber"
-        required
-      /><br />
-      <label>Expiry Date:</label
-      ><input
-        type="text"
-        id="expiryDate"
-        name="expiryDate"
-        placeholder="MM/YYYY"
-        required
-      /><br />
-      <label>CVV:</label
-      ><input type="text" id="cvv" name="cvv" required /><br />
+      <label>Credit Card Number:</label><input type="text" id="creditCardNumber" name="creditCardNumber" required /><br />
+      <label>Expiry Date:</label><input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required /><br />
+      <label>CVV:</label><input type="text" id="cvv" name="cvv" required /><br />
 
       <h2>Shipping Options</h2>
-      <input
-        type="radio"
-        id="standardShipping"
-        name="shipping"
-        value="Standard"
-        onchange="updateOrderSummary()"
-        checked
-      />
+      <input type="radio" id="standardShipping" name="shipping" value="Standard" onchange="updateOrderSummary()" checked />
       <label for="standardShipping">Standard Shipping</label><br />
-      <input
-        type="radio"
-        id="expressShipping"
-        name="shipping"
-        value="Express"
-        onchange="updateOrderSummary()"
-      />
+      <input type="radio" id="expressShipping" name="shipping" value="Express" onchange="updateOrderSummary()" />
       <label for="expressShipping">Express Shipping</label><br />
 
       <h2>Order Summary</h2>
@@ -108,9 +62,7 @@
         const size = document.getElementById("size").value;
         const color = document.getElementById("color").value;
         const quantity = document.getElementById("quantity").value;
-        const shipping = document.querySelector(
-          'input[name="shipping"]:checked'
-        ).value;
+        const shipping = document.querySelector('input[name="shipping"]:checked').value;
         const totalCost = calculateTotalCost(product, quantity, shipping);
 
         const orderSummaryDiv = document.getElementById("orderSummary");

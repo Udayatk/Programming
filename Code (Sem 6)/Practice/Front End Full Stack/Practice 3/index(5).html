@@ -49,9 +49,23 @@
         const travelInsuranceCheckbox = document.getElementById("travelInsurance");
         const airportTransfersCheckbox = document.getElementById("airportTransfers");
 
-        returnDateField.style.display = bookingType === "Flight" ? "block" : "none";
-        travelInsuranceCheckbox.style.display = bookingType === "Tour" || bookingType === "Accommodation" ? "block" : "none";
-        airportTransfersCheckbox.style.display = bookingType === "Tour" || bookingType === "Accommodation" ? "block" : "none";
+        if (bookingType==="Flight"){
+          returnDateField.style.display="block"
+        }else{
+          returnDateField.style.display="none"
+        }
+
+        if (bookingType==="Tour" || bookingType === "Accommodation"){
+          travelInsuranceCheckbox.style.display="block"
+        }else{
+          travelInsuranceCheckbox.style.display="none"
+        }
+
+        if (bookingType==="Tour" || bookingType === "Accommodation"){
+          airportTransfersCheckbox.style.display="block"
+        }else{
+          airportTransfersCheckbox.style.display="none"
+        }
       }
 
       function calculateTotalCost() {
