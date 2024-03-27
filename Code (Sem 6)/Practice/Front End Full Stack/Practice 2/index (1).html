@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form id="formm">
+            <h1>CGPA Calculator</h1>
+
+            Name: <input type="text" id="name" pattern="^[A-Za-z]+$" required><br>
+            Roll No: <input type="text" id="roll" pattern="^20211CAI+[0-9]+$" required><br><br>
+            
+            CSE3051 MARKS: <input type="number" id="cse3051" min="0" max="100" required><br>
+            CSE3052 MARKS: <input type="number" id="cse3052" min="0" max="100" required><br>
+            CSE3053 MARKS: <input type="number" id="cse3053" min="0" max="100" required><br>
+            CSE3054 MARKS: <input type="number" id="cse3054" min="0" max="100" required><br>
+            CSE3055 MARKS: <input type="number" id="cse3055" min="0" max="100" required><br>
+            CSE3056 MARKS: <input type="number" id="cse3056" min="0" max="100" required><br>
+
+            <input type="submit" id="submit" value="Submit">
+            <h3 id="cgpa"></h3>
+            
+        </form>
+
+        <style>
+            input{
+                margin-bottom: 1%;
+            }
+
+            
+        </style>
+
+        <script>
+            formm.addEventListener("click",function()
+            {
+                let sub1 = parseInt(document.getElementById('cse3051').value)
+                let sub2 = parseInt(document.getElementById('cse3052').value)
+                let sub3 = parseInt(document.getElementById('cse3053').value)
+                let sub4 = parseInt(document.getElementById('cse3054').value)
+                let sub5 = parseInt(document.getElementById('cse3055').value)
+                let sub6 = parseInt(document.getElementById('cse3056').value)
+
+                let avg = (sub1+sub2+sub3+sub4+sub5+sub6)/6
+                let cgpa = avg/9.5
+                
+                document.getElementById("cgpa").innerText = "CGPA: "+cgpa;
+            });
+        </script>
+    </body>
+</html>
