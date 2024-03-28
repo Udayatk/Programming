@@ -65,41 +65,35 @@
         const shipping = document.querySelector('input[name="shipping"]:checked').value;
         const totalCost = calculateTotalCost(product, quantity, shipping);
 
-        const orderSummaryDiv = document.getElementById("orderSummary");
-        orderSummaryDiv.innerHTML = `
-        <p><strong>Product:</strong> ${product}</p>
-        <p><strong>Size:</strong> ${size}</p>
-        <p><strong>Color:</strong> ${color}</p>
-        <p><strong>Quantity:</strong> ${quantity}</p>
-        <p><strong>Shipping:</strong> ${shipping}</p>
-        <p><strong>Total Cost:</strong> $${totalCost.toFixed(2)}</p>
-      `;
+        const orderSummary = document.getElementById("orderSummary");
+        orderSummary.innerHTML = `<p>Product:${product}</p>`;
       }
 
-      function calculateTotalCost(product, quantity, shipping) {
-        let productPrice = 0;
-        switch (product) {
-          case "Product A":
-            productPrice = 50;
-            break;
-          case "Product B":
-            productPrice = 70;
-            break;
-          case "Product C":
-            productPrice = 90;
-            break;
-          default:
-            productPrice = 0;
+      function calculateTotalCost(product,quantity,shipping){
+        let productPrice=0;
+        switch(product){
+            case "Product A":
+                productPrice=10;
+                break;
+            case "Product B":
+                productPrice=20;
+                break; 
+            case "Product C":
+                productPrice=30;
+                break;   
+            default:
+                productPrice=0;
         }
-        const shippingCost = shipping === "Express" ? 20 : 10;
-        return productPrice * quantity + shippingCost;
+        let shippingCost=0
+        if ( shipping === "Express"){
+            shippingCost=20;
+        }else{
+            shippingCost=10;
+        }
+        return productPrice*quantity+shippingCost;
       }
-      function submitOrder(event) {
-        event.preventDefault();
-        // Integration with payment gateway goes here
-        alert("Order placed successfully!");
-      }
-      function addToCart() {
+
+      function addToCart(){
         const product = document.getElementById("product").value;
         const size = document.getElementById("size").value;
         const color = document.getElementById("color").value;

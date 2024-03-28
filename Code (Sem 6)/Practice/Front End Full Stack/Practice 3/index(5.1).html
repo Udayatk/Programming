@@ -43,57 +43,42 @@
     </form>
 
     <script>
-      function showAdditionalOptions() {
+      function showAdditionalOptions(){
         const bookingType = document.getElementById("bookingType").value;
-        const returnDateField = document.getElementById("returnDate");
-        const travelInsuranceCheckbox = document.getElementById("travelInsurance");
-        const airportTransfersCheckbox = document.getElementById("airportTransfers");
+        const travelInsurance = document.getElementById("bookingType");
+        const airportTransfers = document.getElementById("bookingType");
+        const returnDate = document.getElementById("returnDate");
 
-        if (bookingType==="Flight"){
-          returnDateField.style.display="block"
+        if (bookingType === "Tour" || bookingType === "Accommodation"){
+          travelInsurance.style.display = "block";
+          airportTransfers.style.display = "block";
         }else{
-          returnDateField.style.display="none"
+          travelInsurance.style.display = "none";
+          airportTransfers.style.display = "none";
         }
-
-        if (bookingType==="Tour" || bookingType === "Accommodation"){
-          travelInsuranceCheckbox.style.display="block"
+        if (bookingType === "Flight"){
+          returnDate.style.display = "block";
         }else{
-          travelInsuranceCheckbox.style.display="none"
-        }
-
-        if (bookingType==="Tour" || bookingType === "Accommodation"){
-          airportTransfersCheckbox.style.display="block"
-        }else{
-          airportTransfersCheckbox.style.display="none"
+          returnDate.style.display = "none";
         }
       }
-
-      function calculateTotalCost() {
-        return 1000; // Replace with actual calculation logic
+      function calculateTotalCost(){
+        return 10000;
       }
 
-      function submitBooking(event) {
-        event.preventDefault();
+      function submitBooking(){
+        const name=document.getElementById("name").value.trim();
+        const phone=document.getElementById("phone").value.trim();
+        const email=document.getElementById("email").value.trim();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const bookingType = document.getElementById("bookingType").value;
-        const destination = document.getElementById("destination").value.trim();
-        const departureDate = document.getElementById("departureDate").value.trim();
-        const returnDate = document.getElementById("returnDate").value.trim();
-        const creditCardNumber = document.getElementById("creditCardNumber").value.trim();
-        const expiryDate = document.getElementById("expiryDate").value.trim();
-        const cvv = document.getElementById("cvv").value.trim();
-
-        if (!name || !email || !phone || !bookingType || !destination || !departureDate || !creditCardNumber || !expiryDate || !cvv) {
-          alert("Please fill in all required fields.");
+        if (!name || !phone || !email){
+          alert("Gand me dal de");
           return;
         }
 
-        const totalCost = calculateTotalCost();
-        const confirmationMessage = `Booking confirmed!\nTotal Cost: ${totalCost.toFixed(2)}`;
-        alert(confirmationMessage);
+        const totalCost=calculateTotalCost();
+        const confirmationMessage=`Booking ho gaya \n Total Cost ${totalCost.toFixed(2)}`;
+        alert (confirmationMessage);
       }
     </script>
   </body>
