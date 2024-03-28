@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopSmart Order Form</title>
+<style>
+    
+</style>
+</head>
+<body>
+    <h1>ShopSmart Order Form</h1>
+    <form id="orderForm">
+        <section id="customerInfo">
+            <h2>Customer Information</h2>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="address" placeholder="Shipping Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+        </section>
+        <section id="productSelection">
+            <h2>Product Selection</h2>
+            
+            <select id="product">
+                <option value="product1">Product 1</option>
+                <option value="product2">Product 2</option>
+                
+            </select>
+           
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                
+            </select>
+           
+            <select id="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+               
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity" min="1" required>
+        </section>
+        <section id="paymentInfo">
+            <h2>Payment Information</h2>
+            <input type="text" id="cardNumber" placeholder="Credit Card Number" required>
+            <input type="text" id="expiryDate" placeholder="Expiry Date" required>
+            <input type="text" id="cvv" placeholder="CVV" required>
+        </section>
+        <section id="shippingOptions">
+            <h2>Shipping Options</h2>
+            <label><input type="radio" name="shipping" value="standard" checked> Standard Shipping</label>
+            <label><input type="radio" name="shipping" value="express"> Express Shipping</label>
+        </section>
+        <section id="orderSummary">
+            <h2>Order Summary</h2>
+            <div id="summary"></div>
+            <p>Total: <span id="total"></span></p>
+        </section>
+        <button type="button" id="addToCart">Add to Cart</button>
+        <button type="submit" id="checkout">Checkout</button>
+    </form>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           
+            document.getElementById('orderForm').addEventListener('submit', function(event) {
+                const requiredFields = document.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+                requiredFields.forEach(function(field) {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('error');
+                    } else {
+                        field.classList.remove('error');
+                    }
+                });
+                if (!isValid) {
+                    event.preventDefault();
+                    alert('Please fill in all required fields.');
+                }
+            });
+    
+            document.getElementById('addToCart').addEventListener('click', function() {
+                const product = document.getElementById('product').value;
+                const size = document.getElementById('size').value;
+                const color = document.getElementById('color').value;
+                const quantity = parseInt(document.getElementById('quantity').value);
+                const price = calculatePrice(product, size, color);
+                const shippingCost = document.querySelector('input[name="shipping"]:checked').value === 'express' ? 10 : 5;
+                const totalCost = price * quantity + shippingCost;
+    
+                const summary = document.getElementById('summary');
+                const total = document.getElementById('total');
+    
+                summary.innerHTML = `<p>${quantity} ${size} ${color} ${product}(s) - $${price.toFixed(2)} each</p>`;
+                total.textContent = `$${totalCost.toFixed(2)}`;
+            });
+    
+           
+            document.getElementById('checkout').addEventListener('click', function() {
+                
+                alert('Redirecting to payment gateway...');
+               
+                displayConfirmation();
+            });
+    
+            
+            function displayConfirmation() {
+                const confirmationMessage = document.createElement('p');
+                confirmationMessage.textContent = 'Your order has been placed successfully! Thank you for shopping with us.';
+                confirmationMessage.style.color = 'green';
+                document.getElementById('orderForm').appendChild(confirmationMessage);
+            }
+    
+           
+            function calculatePrice(product, size, color) {
+                
+                let basePrice = 20;
+                let sizeMultiplier = 1.2; 
+                let colorMultiplier = 1.1;
+    
+                if (size === 'medium') {
+                    basePrice *= sizeMultiplier;
+                } else if (size === 'large') {
+                    basePrice *= sizeMultiplier * sizeMultiplier;
+                }
+    
+                if (color === 'blue') {
+                    basePrice *= colorMultiplier;
+                } else if (color === 'green') {
+                    basePrice *= colorMultiplier * colorMultiplier;
+                }
+    
+                return basePrice;
+            }
+        });
+    </script>
+    
+</body>
+</html>
