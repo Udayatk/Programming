@@ -1,9 +1,9 @@
 /* General styles */
 body {
-  color: #000000;
+  color: #fbf5f3;
   margin: 0;
   padding: 0;
-  background-color: #ffd703;
+  background-color: #000022;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -20,26 +20,25 @@ nav a {
   margin-right: 20px;
 }
 
-/* Main section styles 
-main {
+Main section styles main {
   text-align: center;
 }
 main h2 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: white;
+  color: #fbf5f3;
 }
 main p {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 50px;
-  color: white;
-}*/
+  color: #fbf5f3;
+}
 
 #m1 {
   text-align: center;
+  padding-top: 700px;
 }
-/* Menu section styles */
 section {
   display: flex;
   flex-wrap: wrap;
@@ -49,9 +48,11 @@ section {
 .menu-item {
   flex-basis: 30%;
   margin-bottom: 50px;
-  box-shadow: 0px 0px 10px #999;
+  box-shadow: 0px 0px 10px #000000;
   padding: 20px;
   text-align: center;
+  padding: 10px;
+  background-color: #e28413;
 }
 .menu-item img {
   max-width: 100%;
@@ -59,12 +60,12 @@ section {
   margin-bottom: 20px;
 }
 .menu-item h3 {
-  color: #333;
+  color: #fbf5f3;
   font-size: 24px;
   margin-bottom: 10px;
 }
 .menu-item p {
-  color: #666;
+  color: #fbf5f3;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -78,11 +79,9 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-
-/*Header Tags*/
 #top {
   position: fixed;
-  background-color: #ffd703;
+  background-color: #000022;
   width: 100%;
   z-index: 1;
   transition: 0.2s;
@@ -95,33 +94,33 @@ footer p {
 
 a {
   color: #000000;
+  text-decoration: none;
 }
 
 a:link {
-  color: #000000;
+  color: #fbf5f3;
   background-color: transparent;
   text-decoration: none;
-  background: linear-gradient(to left, #ffd703 50%, #000000 50%) right;
+  background: linear-gradient(to left, #000022 50%, #e28413 50%) right;
   background-size: 300%;
   transition: 0.2s ease-out;
 }
 a:hover {
-  color: #ffd703;
+  color: #fbf5f3;
   background-color: transparent;
   background-position: left;
+  text-decoration: none;
   padding: 10px;
 }
-
-/*About Us Tag*/
 .img {
-  background-image: url("../LAB 3/Assets/marwari thali.jpg");
+  background-image: url("../LAB 3/Assets/fresh gourmet meal.jpg");
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
   height: 50%;
   float: right;
   overflow: auto;
-  color: white;
+  color: ffe100;
   text-align: center;
   margin-top: 160px;
   padding-bottom: 50px;
@@ -142,4 +141,15 @@ a:hover {
 #text {
   padding-left: 100px;
   padding-right: 100px;
+}
+#pizza{
+  height: auto;
+}
+#burger{
+  height: 236px;
+  width: fit-content;
+}
+#pasta{
+  height: 236px;
+  width: fit-content;
 }
