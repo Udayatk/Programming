@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      body{
+          background-color:{{mycolor}};
+      }
+    </style>
+  </head>
+  <body>
+    <!--Adding "ng-app" into other tabs allows those tabs to improve their functionality-->
+    <div ng-app>
+      {{3+4}}<br />
+      <input type="text" id="" placeholder="Enter your Name" ng-model="fname" />
+      <!--{{fname}}-->
+      <h1 ng-bind="fname"></h1>
+    </div>
+    <div ng-init="a=10; city='Bangalore'; student={roll:1, name:'Adi'}"></div>
+    {{a}} <br />{{city}}<br />
+    {{student.name}}
+
+    <div ng-app>
+      <input type="text" id="" placeholder="Enter a color" ng-model="mycolor" />
+    </div>
+    <script src="../LAB 12/myAngular.js" async defer></script>
+  </body>
+</html>
