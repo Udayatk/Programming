@@ -3,6 +3,6 @@ var app=angular.module("myModule",[]);
 
 //Step 2 Creating controller using the module
 app.controller("myController",($scope)=>{
-    $scope.fname="Adi";//Fetch data from model 
-    $scope.marks=69;
-});
+    $scope.fname="Adi"//Fetch data from model 
+    $scope.marks=69
+})
