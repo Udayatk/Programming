@@ -1,0 +1,43 @@
+body {
+    background-color: #E4F0F8;
+    font-family: Arial, sans-serif;
+}
+form {
+    width: 400px;
+    margin: 0 auto;
+}
+fieldset {
+    border: 2px solid blue;
+    padding: 20px;
+}
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+input[type="radio"] {
+    margin-right: 10px;
+}
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: darkblue;
+}
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+    outline: none;
+}
+.error-message {
+    color: red;
+}

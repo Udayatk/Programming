@@ -1,102 +1,147 @@
-<html>
-
-<head>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
-  <title>My Restaurant</title>
-  <style>
-    body {
-      font-family: "Rubik Mono One", monospace;
-      font-weight: 400;
-      font-style: normal;
-    }
-  </style>
-</head>
-
-<body>
-  <header id="top">
-    <h1 id="home"><a href="index.html">Take It Away</a></h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#m1">Menu</a>
-      <a href="#c1">Contact Us</a>
-    </nav>
-  </header>
-  <main>
-    <div class="img">
-      <h2><br />About Us</h2>
-      <p id="text">
-        <br />
-        Born from family recipes and simmering dreams, Take It Away isn't just
-        a restaurant, it's a legacy. Our story began years ago, in kitchens
-        fragrant with spices and alive with the warmth of loved ones. Now, we
-        bring those cherished flavors to you, offering a taste of India's rich
-        heritage. But our journey doesn't end there. We're constantly
-        innovating, exploring new avenues while staying true to our roots.
-        Like a well-seasoned dish, we evolve, but the core remains the same:
-        sharing authentic Indian fare cooked with love. So, join us on this
-        culinary adventure. Savor the past, relish the present, and discover
-        the delicious future of Tikka Take It Away.
-      </p>
-    </div>
-    <h2 id="m1">MENU</h2>
-    <section>
-      <div class="menu-item">
-        <img src="menu-item1.jpeg" alt="Pizza image" />
-        <h3>pizza</h3>
-        <p>
-          If you’re a vegetarian, you’ll love Domino’s Veg Extravaganza, Indi
-          Tandoori Paneer, and Mexican Green Wave. For non-vegetarians,
-          Non-Veg Supreme, Chicken Fiesta, and Indi Chicken Tikka top the
-          list. Though these are the most loved Domino’s pizzas along with the
-          cheesy Margherita pizza, you should check out the Domino’s menu to
-          see what you like the most.
-        </p>
-      </div>
-      <div class="menu-item">
-        <img src="menu-item1.jpeg" alt="burger image" />
-        <h3>Burger</h3>
-        <p>
-          Nine Different Types of Burgers to Make Turkey burger. ...
-          Portobello mushroom burger. ... Veggie burger. ... Wild salmon
-          burger. ... Bean burger. ... Cheeseburger
-        </p>
-      </div>
-      // Make one division for pasta
-    </section>
-  </main>
-  <section>
-    <div id="grad1">
-      <h1 id="c1">contact us</h1>
-    </div>
-    <div id="rot">
-      <h1>feedback</h1>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2023 My Restaurant</p>
-  </footer>
-
-  <script>
-    // When the user scrolls down 50px from the top of the document, resize the header's font size
-    window.onscroll = function () {
-      scrollFunction();
-    };
-
-    function scrollFunction() {
-      if (
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
-      ) {
-        document.getElementById("top").style.fontSize = "15px";
-      } else {
-        document.getElementById("top").style.fontSize = "20px";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Restaurant</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
       }
-    }
-  </script>
-</body>
 
+      header {
+        background-color: #333;
+        color: ffe100;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 0px;
+      }
+
+      header a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .img {
+        text-align: center;
+      }
+
+      .menu-item {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="top">
+      <h1 id="home"><a href="index.html">Take It Away</a></h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#m1">Menu</a>
+        <a href="#c1">Contact Us</a>
+      </nav>
+    </header>
+    <main>
+      <div class="img">
+        <h2><br />About Us</h2>
+        <p id="text">
+          <br />
+          Born from family recipes and simmering dreams, Take It Away isn't just
+          a restaurant, it's a legacy. Our story began years ago, in kitchens
+          fragrant with spices and alive with the warmth of loved ones. Now, we
+          bring those cherished flavors to you, offering a taste of India's rich
+          heritage. But our journey doesn't end there. We're constantly
+          innovating, exploring new avenues while staying true to our roots.
+          Like a well-seasoned dish, we evolve, but the core remains the same:
+          sharing authentic Indian fare cooked with love. So, join us on this
+          culinary adventure. Savor the past, relish the present, and discover
+          the delicious future of Tikka Take It Away.
+        </p>
+      </div>
+      <h2 id="m1">MENU</h2>
+      <section>
+        <div class="menu-item">
+          <img id="pizza" src="../LAB 3/Assets/pizza.jpg" alt="Pizza image" />
+          <h3>Pizza</h3>
+          <p>
+            "For vegetarians, indulge in our Veg Extravaganza, Tandoori Paneer,
+            and Mexican Green Wave pizzas. Non-vegetarians rave about our
+            Non-Veg Supreme, Chicken Fiesta, and Indi Chicken Tikka. Alongside
+            the classic Margherita, explore our full menu for more options!"
+          </p>
+        </div>
+        <div class="menu-item">
+          <img id="burger" src="../LAB 3/Assets/burger.jpg" alt="Burger image" />
+          <h3>Burger</h3>
+          <p>
+            "Vegetarian or meat lover, our burger menu has it all. Try our
+            Veggie Supreme or Classic Beef Burger for a tasty treat. With a
+            variety of flavors, there's something for everyone. Explore our menu
+            and find your new favorite!"
+          </p>
+        </div>
+        <div class="menu-item">
+          <img id="pasta" src="../LAB 3/Assets/pasta.jpg" alt="Pasta image" />
+          <h3>Pasta</h3>
+          <p>
+            Delicious pasta dishes crafted with fresh ingredients and authentic
+            flavors. From classic Spaghetti Carbonara to creamy Alfredo, we have
+            something for every pasta lover.
+          </p>
+        </div>
+      </section>
+    </main>
+    <section>
+      <div id="grad1">
+        <h1 id="c1">Contact Us</h1>
+      </div>
+      <div id="rot">
+        <h1>Feedback</h1>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 My Restaurant</p>
+    </footer>
+
+    <script>
+      // When the user scrolls down 50px from the top of the document, resize the header's font size
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          document.getElementById("top").style.fontSize = "15px";
+        } else {
+          document.getElementById("top").style.fontSize = "20px";
+        }
+      }
+    </script>
+  </body>
 </html>
