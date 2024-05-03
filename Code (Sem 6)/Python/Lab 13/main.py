@@ -32,6 +32,10 @@ def maximum(list):
             maximum=element
     return maximum
 
+#A function to find the second minimum element in a list
+def second_minimum(list):
+    minimum=minimum(list)
+
 x,y=user_input() #Takes the user input(2 values)
 print("The sum of ",x,"and",y,"is:",add(x,y))#Prints the sum of the above variables
 list=list()#Creates a list and adds elements to the list
